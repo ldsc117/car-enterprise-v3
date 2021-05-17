@@ -1,0 +1,109 @@
+
+
+.App {
+  text-align: center;
+
+}
+
+nav {
+  
+}
+
+.Nav-links {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  list-style: none;
+}
+
+.vehicles {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.bar-link {
+  margin: 10px;
+  background:black;
+  padding: 2px;
+  margin-top: 0px;
+  border-style: solid;
+  border-radius: 30px;
+}
+.nav-title {
+  margin-right: 10px;
+}
+
+.model {
+  margin:10px;
+  padding: 5px;
+
+
+}
+.data {
+  
+  margin: 5rem auto;
+  display: flex ;
+  align-content: left;
+  text-align: left;
+}
+.main-container {
+
+  width: 80%;
+  margin: 0 auto;
+} 
+ 
+.upper-content {
+  margin: 0 auto;
+  text-align: center;
+
+}
+
+.table{
+  text-align: left;
+
+}
+
+.table-container{
+  width:80%;
+  margin: auto;
+  align-items: center;
+}
+
+.card-container {
+  
+  margin:20px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.car-card:hover{
+  transform: scale(1.1);
+  box-shadow: 0px 0px 15px 0px;
+}
+.car-card {
+  box-shadow: 0px 0px 20px -5px;
+  border-style:solid;
+  border-color: grey;
+  border-width: 2px;
+  border-radius: 20px;
+  margin: 20px;
+  padding: 10px;
+}
+
+.card-title {
+  text-transform: capitalize;
+
+}
+
+.td-capitalize {
+  text-transform: capitalize;
+}
+
+.filter {
+  flex-flow:row;
+  flex:right;
+  
+}
+

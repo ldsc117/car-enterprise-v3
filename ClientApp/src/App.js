@@ -10,9 +10,11 @@ import { ApplicationPaths } from './components/api-authorization/ApiAuthorizatio
 
 import './custom.css'
 
+import Cars from "./components/Cars";
+
+
 export default class App extends Component {
-    //static displayName = App.name;
-    static displayName = "CAR DATA ENTERPRISE";
+    static displayName = App.name;
 
 
   render () {
@@ -20,7 +22,7 @@ export default class App extends Component {
       <Layout>
         <Route exact path='/' component={Home} />
         <Route path='/counter' component={Counter} />
-        <AuthorizeRoute path='/fetch-data' component={FetchData} />
+        <AuthorizeRoute path="/cars" exact component={Cars} />
         <Route path={ApplicationPaths.ApiAuthorizationPrefix} component={ApiAuthorizationRoutes} />
       </Layout>
     );

@@ -1,28 +1,43 @@
 import React, { Component } from 'react';
+import Card from "react-bootstrap/Card";
 
 export class Home extends Component {
-    //static displayName = Home.name;
-    static displayName = "CAR DATA ENTERPRISE";
+    static displayName = Home.name;
 
 
-  render () {
+    render() {
     return (
-      <div>
-        <h1>Hello, world!</h1>
-        <p>Welcome to your new single-page application, built with:</p>
-        <ul>
-          <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
-          <li><a href='https://facebook.github.io/react/'>React</a> for client-side code</li>
-          <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
-        </ul>
-        <p>To help you get started, we have also set up:</p>
-        <ul>
-          <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.</li>
-          <li><strong>Development server integration</strong>. In development mode, the development server from <code>create-react-app</code> runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you modify any file.</li>
-          <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration produces minified, efficiently bundled JavaScript files.</li>
-        </ul>
-        <p>The <code>ClientApp</code> subdirectory is a standard React application based on the <code>create-react-app</code> template. If you open a command prompt in that directory, you can run <code>npm</code> commands such as <code>npm test</code> or <code>npm install</code>.</p>
-      </div>
+        <div style={{ width: "80%", margin: "auto", padding: "20px" }}>
+            <h1>CAR ENTERPRISE</h1>
+            <h3>=== for car lovers ===</h3>
+            <Card style={{ textAlign: 'left' }}>
+                <h5>
+                    Wellcome to our site, a site containing:
+        </h5>
+                <h5>
+                    - cars informations, technical data, pictures
+        </h5>
+                <h5>
+                    - informations of selling new/old cars
+        </h5>
+                <h5>
+                    - comments refearing cars, vendors, etc
+        </h5>
+                <h5>
+                    - informations from NHTSA site
+        </h5>
+
+                <h6 style={{ color: 'grey' }}>
+                    [ The NHTSA Product Information Catalog Vehicle Listing (vPIC)  provides different ways to gather
+                    information on Vehicles and their specifications. The vPIC Dataset is
+                    populated using the information submitted by the Motor Vehicle
+                    manufacturers through the 565 submittals. All the information on how a
+                    VIN is assigned by the manufacturer is captured in this catalog and used
+                    to decode a VIN and extract vehicle information.]
+        </h6>
+            </Card>
+            <img src="https://cdn.vivre.eu/upload/2018/03/thumbs/5a9d1b07d21952.59465374.1400x1400.jpg" alt=""></img>
+        </div>
     );
   }
 }

@@ -16,6 +16,7 @@ namespace a6_car_enterprise
 {
     public class Startup
     {
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -49,7 +50,11 @@ namespace a6_car_enterprise
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+
         }
+
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
