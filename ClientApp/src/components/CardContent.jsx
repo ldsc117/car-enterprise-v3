@@ -49,6 +49,14 @@ function CardContent({ element }) {
                     <td>Production Years</td>
                     <td>{element.modelYearI + "-" + element.modelYearF}</td>
                   </tr>
+                  <tr>
+                    <td>Top Speed</td>
+                    <td>{element.topSpeedKmph}</td>
+                  </tr>
+                  <tr>
+                    <td>Horse Power</td>
+                    <td>{element.maxPowerBhp}</td>
+                  </tr>
                 </tbody>
               </Table>
               <h4>Car Points Value: {element.valuePoints}</h4>

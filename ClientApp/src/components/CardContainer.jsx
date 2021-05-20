@@ -4,20 +4,28 @@ import "../App.css";
 import CarMarket from "./CarMarket";
 
 
-function CardContainer({string,data,selectedCompanies,userPoints,showAforted}) {
+function CardContainer({string,data,userPoints,showAforted,sortValue}) {
 
   const [selectedMakers,setSelectedMakers] = useState();
-  let carItems = data;
   
-
+  let carItems= data;
   if(showAforted&&carItems){
   carItems = carItems.filter((item)=> item.valuePoints < userPoints)  
   }
-  
-
+  if(sortValue&&carItems)
+  {carItems.sort(GetSortOrder(sortValue))}
   
   console.log(selectedMakers)
-
+  function GetSortOrder(prop) {    
+    return function(a, b) {    
+        if (a[prop] > b[prop]) {    
+            return 1;    
+        } else if (a[prop] < b[prop]) {    
+            return -1;    
+        }    
+        return 0;    
+    }    
+}  
 
   return (
     <div className="card-container">
