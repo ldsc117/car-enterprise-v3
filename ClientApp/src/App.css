@@ -103,7 +103,8 @@ nav {
 
 .filter {
   flex-flow:row;
-  flex:right;
+  flex: auto;
+  flex: auto;
   
 }
 
