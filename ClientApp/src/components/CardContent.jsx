@@ -51,9 +51,11 @@ function CardContent({ element }) {
                   </tr>
                 </tbody>
               </Table>
-
+              <h4>Car Points Value: {element.valuePoints}</h4>
               <Button variant="primary" onClick={handleShow}>
                 View More
+              </Button><Button id="get-car-button" variant="success">
+                Get Car
               </Button>
               <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>

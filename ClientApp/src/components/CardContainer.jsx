@@ -1,35 +1,27 @@
 import React, {useState,useEffect} from "react";
 import CardContent from "./CardContent";
 import "../App.css";
-import axios from 'axios';
+import CarMarket from "./CarMarket";
 
 
-function CardContainer({string}) {
+function CardContainer({string,data,selectedCompanies,userPoints,showAforted}) {
 
-  const [carItems, setCarItems] = useState([])
+  const [selectedMakers,setSelectedMakers] = useState();
+  let carItems = data;
+  
 
-  useEffect(() => {
-      axios.get('https://localhost:44316/api/CarItems')
-      .then(response => {
-          console.log("=============response.data.Results")
-          console.log(response.data);
-          setCarItems(response.data)
-
-      })
-      .catch(err => {
-          console.log(err)
-      })
-  },[] )
+  if(showAforted&&carItems){
+  carItems = carItems.filter((item)=> item.valuePoints < userPoints)  
+  }
+  
 
   
-  
-  const [companyList,setCompanyList] = useState([]);
+  console.log(selectedMakers)
 
-  console.log(companyList);
 
   return (
     <div className="card-container">
-      {carItems.map((object , index ) => 
+      {carItems  && carItems.map((object , index ) => 
       
       string != "" ?
       (object.company.includes(string.toLowerCase())
@@ -39,22 +31,21 @@ function CardContainer({string}) {
       || object.model.includes(string.toLowerCase())
       
       )
+      
       ?
       (
         <div className="car-card" key={index}>
-        {companyList.includes(object.company)? null :companyList.push(object.company)}  
         <CardContent key={index} id={index} element={object}/>
         </div>  
       )
       :
       null
       :(
-      <div className="car-card" key={index}>
-      {companyList.includes(object.company)? null :companyList.push(object.company)}
-      {console.log(companyList)}  
+      <div className="car-card" key={index}> 
       <CardContent key={index} id={index} element={object}/>
       </div>   
       )
+      
       )}
     </div>
   );

@@ -1,5 +1,9 @@
 
 
+* {
+  margin: 0;
+  }
+
 .App {
   text-align: center;
 
@@ -72,10 +76,11 @@ nav {
 }
 
 .card-container {
-  
+  min-width:90%;
   margin:20px;
   display: flex;
   flex-flow: row wrap;
+  
 }
 
 .car-card:hover{
@@ -102,9 +107,27 @@ nav {
 }
 
 .filter {
-  flex-flow:row;
-  flex: auto;
-  flex: auto;
+ width: 280px;
   
+}
+
+.container-cars {
+  min-width:120%;
+  display: flex;
+  flex-direction:row;
+}
+
+.hidden {display:none;}
+
+.carMarket-upper-body {
+  display: flex;
+  flex-direction: row;
+}
+
+#get-car-button {
+  margin-left:60px;
+}
+.car-market-title {
+  margin-left: 20px
 }
 

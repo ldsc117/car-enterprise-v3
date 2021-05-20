@@ -11,6 +11,8 @@ import { ApplicationPaths } from './components/api-authorization/ApiAuthorizatio
 import './custom.css'
 
 import Cars from "./components/Cars";
+import CarMarket from "./components/CarMarket";
+
 
 
 export default class App extends Component {
@@ -23,6 +25,7 @@ export default class App extends Component {
         <Route exact path='/' component={Home} />
         <Route path='/counter' component={Counter} />
         <AuthorizeRoute path="/cars" exact component={Cars} />
+        <AuthorizeRoute path="/carmarket" exact component={CarMarket} />
         <Route path={ApplicationPaths.ApiAuthorizationPrefix} component={ApiAuthorizationRoutes} />
       </Layout>
     );
