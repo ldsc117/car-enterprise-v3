@@ -10,7 +10,7 @@ import "../App.css";
 
 const CarMarket = () => {
   let showAforted = true;
-  const [userPoints, setUserPoints] = useState(100);
+  const [userPoints, setUserPoints] = useState(50);
   const [carItems, setCarItems] = useState();
   const [tempCarItems, setTempCarItems] = useState();
   const [companyList, setCompanyList] = useState([]);
@@ -79,7 +79,7 @@ const CarMarket = () => {
         <h3 className="car-market-title">You have: {userPoints} points</h3>
         <h3 className="car-market-title">Theese are the cars you can afford</h3>
         </div>
-        <Form className="car-market-title">
+        <Form className="select-form">
           <Form.Group controlId="exampleForm.ControlSelect1">
             <Form.Label>Sort By</Form.Label>
             <Form.Control as="select" onChange={handleSelectChange}>
