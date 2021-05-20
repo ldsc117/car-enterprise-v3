@@ -124,4 +124,10 @@ nav {
   flex-direction: row;
 }
 
+#get-car-button {
+  margin-left:60px;
+}
+.car-market-title {
+  margin-left: 20px
+}
 

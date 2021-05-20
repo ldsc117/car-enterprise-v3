@@ -10,7 +10,7 @@ import "../App.css";
 
 const CarMarket = () => {
   let showAforted=true;
-  const [userPoints, setUserPoints] = useState(40);
+  const [userPoints, setUserPoints] = useState(30);
   const [carItems, setCarItems] = useState();
   const [tempCarItems, setTempCarItems] = useState();
   const [companyList, setCompanyList] = useState([]);
@@ -69,8 +69,8 @@ const CarMarket = () => {
       <h1>Cars</h1>
       <div className="carMarket-upper-body">
         <SearchBar value={string} onChange={handleChange} />
-        <h3>You have: {userPoints} points</h3>
-        <h3>Theese are the cars you can affort</h3>
+        <h3 className="car-market-title">You have: {userPoints} points</h3>
+        <h3 className="car-market-title">Theese are the cars you can affort</h3>
       </div>
       <div className="container-cars">
         <h1 className="hidden">
