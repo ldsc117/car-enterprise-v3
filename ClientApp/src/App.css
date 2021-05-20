@@ -116,10 +116,12 @@ nav {
   display: flex;
   flex-direction:row;
 }
-.container {
-  
-}
+
 .hidden {display:none;}
 
+.carMarket-upper-body {
+  display: flex;
+  flex-direction: row;
+}
 
 

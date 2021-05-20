@@ -30,7 +30,11 @@ const Cars = () => {
   return (
     <div>
       <h1>Cars</h1>
-      
+      <CardContainer
+          string={string}
+          data={carItems}
+          
+        />
     </div>
   );
 };

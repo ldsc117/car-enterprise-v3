@@ -4,15 +4,24 @@ import "../App.css";
 import CarMarket from "./CarMarket";
 
 
-function CardContainer({string,data,selectedCompanies}) {
+function CardContainer({string,data,selectedCompanies,userPoints,showAforted}) {
 
   const [selectedMakers,setSelectedMakers] = useState();
+  let carItems = data;
+  
+
+  if(showAforted&&carItems){
+  carItems = carItems.filter((item)=> item.valuePoints < userPoints)  
+  }
+  
 
   
   console.log(selectedMakers)
+
+
   return (
     <div className="card-container">
-      {data  && data.map((object , index ) => 
+      {carItems  && carItems.map((object , index ) => 
       
       string != "" ?
       (object.company.includes(string.toLowerCase())
@@ -20,6 +29,7 @@ function CardContainer({string,data,selectedCompanies}) {
       || object.bodyType.includes(string.toLowerCase())
       || object.generation.includes(string.toUpperCase())
       || object.model.includes(string.toLowerCase())
+      
       )
       
       ?
