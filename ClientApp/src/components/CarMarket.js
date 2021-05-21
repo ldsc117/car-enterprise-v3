@@ -10,7 +10,7 @@ import "../App.css";
 
 const CarMarket = () => {
   let showAforted = true;
-  const [userPoints, setUserPoints] = useState(50);
+  const [userPoints, setUserPoints] = useState(90);
   const [carItems, setCarItems] = useState();
   const [tempCarItems, setTempCarItems] = useState();
   const [companyList, setCompanyList] = useState([]);

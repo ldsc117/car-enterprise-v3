@@ -12,6 +12,7 @@ import './custom.css'
 
 import Cars from "./components/Cars";
 import CarMarket from "./components/CarMarket";
+import Employees from "./components/Employees";
 
 
 
@@ -23,7 +24,7 @@ export default class App extends Component {
     return (
       <Layout>
         <Route exact path='/' component={Home} />
-        <Route path='/counter' component={Counter} />
+        <Route path='/employees' component={Employees} />
         <AuthorizeRoute path="/cars" exact component={Cars} />
         <AuthorizeRoute path="/carmarket" exact component={CarMarket} />
         <Route path={ApplicationPaths.ApiAuthorizationPrefix} component={ApiAuthorizationRoutes} />
