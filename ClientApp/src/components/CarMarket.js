@@ -10,6 +10,7 @@ import "../App.css";
 
 const CarMarket = () => {
   let showAforted = true;
+  const [reversed ,setReversed] = useState();
   const [userPoints, setUserPoints] = useState(50);
   const [carItems, setCarItems] = useState();
   const [tempCarItems, setTempCarItems] = useState();
@@ -48,9 +49,18 @@ const CarMarket = () => {
     filter(selectCompany);
   }
 
+  
   function handleSelectChange(event){
-    setSortValue(event.target.value);
-    
+    var str = event.target.value;
+    var number = str.slice(-1);
+    if(number==="1"){
+      setReversed(false);
+    }
+    else if(number==="2"){
+      setReversed(true);
+    }
+    console.log(reversed);
+    setSortValue(str.substring(0, str.length - 1));
   }
 
   const filter = (selectComp) => {
@@ -84,9 +94,10 @@ const CarMarket = () => {
             <Form.Label>Sort By</Form.Label>
             <Form.Control as="select" onChange={handleSelectChange}>
               <option> </option>
-              <option value="valuePoints">Points</option>
-              <option value="topSpeedKmph">Top Speed</option>
-              <option value="maxPowerBhp">Horse Power</option>
+              <option value="valuePoints1">Points Ascending</option>
+              <option value="valuePoints2">Points Descending</option>
+              <option value="topSpeedKmph2">Top Speed</option>
+              <option value="maxPowerBhp2">Horse Power</option>
               
             </Form.Control>
           </Form.Group>
@@ -107,6 +118,7 @@ const CarMarket = () => {
           userPoints={userPoints}
           showAforted={showAforted}
           sortValue={sortValue}
+          reversed={reversed}
         />
         <Accordion defaultActiveKey="0" className="filter">
           <Card>

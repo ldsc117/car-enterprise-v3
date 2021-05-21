@@ -4,7 +4,7 @@ import "../App.css";
 import CarMarket from "./CarMarket";
 
 
-function CardContainer({string,data,userPoints,showAforted,sortValue}) {
+function CardContainer({string,data,userPoints,showAforted,sortValue,reversed}) {
 
   const [selectedMakers,setSelectedMakers] = useState();
   
@@ -13,15 +13,21 @@ function CardContainer({string,data,userPoints,showAforted,sortValue}) {
   carItems = carItems.filter((item)=> item.valuePoints < userPoints)  
   }
   if(sortValue&&carItems)
-  {carItems.sort(GetSortOrder(sortValue))}
+  {console.log(reversed);
+    
+    carItems.sort(GetSortOrder(sortValue,reversed));}
   
   console.log(selectedMakers)
-  function GetSortOrder(prop) {    
+  function GetSortOrder(prop,reversed) {    
     return function(a, b) {    
-        if (a[prop] > b[prop]) {    
-            return 1;    
+        if (a[prop] > b[prop]) {
+          if(reversed===true)    
+            {return -1; } 
+          else{return 1;}    
         } else if (a[prop] < b[prop]) {    
-            return -1;    
+          if(reversed===true)    
+          {return 1; } 
+          else{return -1;}     
         }    
         return 0;    
     }    
