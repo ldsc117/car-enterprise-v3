@@ -102,7 +102,7 @@ const CarMarket = () => {
             </Form.Control>
           </Form.Group>
         </Form>
-     
+      
       <div className="container-cars">
         <h1 className="hidden">
           {carItems &&
@@ -112,18 +112,12 @@ const CarMarket = () => {
                 : companyList.push(element.company)
             )}
         </h1>
-        <CardContainer
-          string={string}
-          data={tempCarItems}
-          userPoints={userPoints}
-          showAforted={showAforted}
-          sortValue={sortValue}
-          reversed={reversed}
-        />
+        < div className="filter">
         <Accordion defaultActiveKey="0" className="filter">
-          <Card>
+          <Card >
             <Accordion.Toggle as={Card.Header} eventKey="0">
               Select Company
+              <i className="fa fa-angle-down"></i>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <Form.Group controlId="formBasicCheckbox">
@@ -141,6 +135,16 @@ const CarMarket = () => {
             </Accordion.Collapse>
           </Card>
         </Accordion>
+        </div>
+        <CardContainer
+          string={string}
+          data={tempCarItems}
+          userPoints={userPoints}
+          showAforted={showAforted}
+          sortValue={sortValue}
+          reversed={reversed}
+        />
+        
       </div>
     </div>
   );
