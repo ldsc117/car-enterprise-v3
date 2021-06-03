@@ -13,6 +13,7 @@ import './custom.css'
 import Cars from "./components/Cars";
 import CarMarket from "./components/CarMarket";
 import Employees from "./components/Employees";
+import AdminPage from "./components/AdminPage";
 
 
 
@@ -25,6 +26,7 @@ export default class App extends Component {
       <Layout>
         <Route exact path='/' component={Home} />
         <Route path='/employees' component={Employees} />
+        <Route path='/admin' component={AdminPage} />
         <AuthorizeRoute path="/cars" exact component={Cars} />
         <AuthorizeRoute path="/carmarket" exact component={CarMarket} />
         <Route path={ApplicationPaths.ApiAuthorizationPrefix} component={ApiAuthorizationRoutes} />

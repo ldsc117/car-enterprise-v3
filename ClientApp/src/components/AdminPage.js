@@ -3,7 +3,7 @@ import axios from 'axios';
 import Table from 'react-bootstrap/Table';
 
 
-const Employees = () => {
+const AdminPage = () => {
 
     const [employees, setEmployees] = useState([])
 
@@ -15,7 +15,7 @@ const Employees = () => {
                 //console.log("=============response.data.Results");
                 //console.log(response.data);
                 setEmployees(response.data);
-                
+
             })
             .catch((err) => {
                 console.log(err);
@@ -29,17 +29,8 @@ const Employees = () => {
 
     return (
         <div className='table-container'>
-            <h4>List of Employees sort by:</h4>
-            <div>
-            {/*<h5>Sort by: </h5>*/}
-            <select>
-                <option value="id">None</option>
-                <option value="firstName">First Name</option>
-                <option value="lastName">LastName</option>
-                <option value="email">Email</option>
-                <option value="rankPoints">Points</option>
-                </select>
-            </div>
+            <h4>List of Employees sort by Rank Points:</h4>
+            <br></br>
 
             <Table className='table' striped bordered hover size="sm">
                 <thead>
@@ -55,24 +46,28 @@ const Employees = () => {
                 <tbody>
 
                     {employees
-                        //.sort((a, b) => (a.rankPoints < b.rankPoints)? 1 : -1)
+                        .sort((a, b) => (a.rankPoints < b.rankPoints)? 1 : -1)
                         //.filter(a => a.registrationId == "1ca3dc48-3147-405e-9cb4-5c8535e5ee2d")
                         .map(employee =>
-                        <tr key={employee.id}>
-                            <td>{employee.id}</td>
-                            <td>{employee.firstName}  {employee.lastName}</td>
-                            <td>{employee.email}</td>
-                            <td>{employee.phoneNumber}</td>
-                            <td>{employee.rankPoints}</td>
-                        </tr>)}
+                            <tr key={employee.id}>
+                                <td>{employee.id}</td>
+                                <td>{employee.firstName}  {employee.lastName}</td>
+                                <td>{employee.email}</td>
+                                <td>{employee.phoneNumber}</td>
+                                <td>{employee.rankPoints}</td>
+                            </tr>)}
 
 
                 </tbody>
             </Table>
+
+            <h4>Input number of available cars:</h4>
+
+            {/*<SendEmails />*/}
 
         </div>
     )
 
 };
 
-export default Employees;
+export default AdminPage;
