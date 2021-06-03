@@ -17,6 +17,7 @@ const CarMarket = () => {
   const [companyList, setCompanyList] = useState([]);
   const [selectCompany, setSelectCompany] = useState([]);
   const[sortValue, setSortValue] = useState("");
+  const [isUp, setIsUp] = useState("false");
   
   useEffect(() => {
     axios
@@ -35,7 +36,9 @@ const CarMarket = () => {
   function handleChange(newValue) {
     setString(newValue);
   }
-
+  const handleToggle = () => {
+    setIsUp(!isUp);
+  };
   function handleCheckChange(event) {
     var company = event.target.value;
 
@@ -115,9 +118,8 @@ const CarMarket = () => {
         < div className="filter">
         <Accordion defaultActiveKey="0" className="filter">
           <Card >
-            <Accordion.Toggle as={Card.Header} eventKey="0">
-              Select Company
-              <i className="fa fa-angle-down"></i>
+            <Accordion.Toggle as={Card.Header} eventKey="0" onClick={handleToggle}>
+              <p><span className="select-company">Select Company</span><i className={isUp ? "arrow up" : "arrow down"}></i></p>
             </Accordion.Toggle>
             <Accordion.Collapse eventKey="0">
               <Form.Group controlId="formBasicCheckbox">
