@@ -157,3 +157,7 @@ nav {
 .select-company {
   margin-right: 45px;
 }
+.lower-card-buttons {
+  display:flex;
+  flex-direction: row;
+} 

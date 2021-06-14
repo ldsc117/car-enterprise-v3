@@ -9,9 +9,7 @@ function CardContainer({string,data,userPoints,showAforted,sortValue,reversed}) 
   const [selectedMakers,setSelectedMakers] = useState();
   
   let carItems= data;
-  if(showAforted&&carItems){
-  carItems = carItems.filter((item)=> item.valuePoints < userPoints)  
-  }
+  
   if(sortValue&&carItems)
   {console.log(reversed);
     
@@ -47,16 +45,16 @@ function CardContainer({string,data,userPoints,showAforted,sortValue,reversed}) 
       )
       
       ?
-      (
+      ( 
         <div className="car-card" key={index}>
-        <CardContent key={index} id={index} element={object}/>
+        <CardContent key={index} id={index} element={object} afforted={object.valuePoints<userPoints}/>
         </div>  
       )
       :
       null
       :(
       <div className="car-card" key={index}> 
-      <CardContent key={index} id={index} element={object}/>
+      <CardContent key={index} id={index} element={object} afforted={object.valuePoints<userPoints}/>
       </div>   
       )
       

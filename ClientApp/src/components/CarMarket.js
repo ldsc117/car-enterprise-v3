@@ -9,7 +9,7 @@ import Card from "react-bootstrap/Card";
 import "../App.css";
 
 const CarMarket = () => {
-  let showAforted = true;
+  
   const [reversed ,setReversed] = useState();
   const [userPoints, setUserPoints] = useState(50);
   const [carItems, setCarItems] = useState();
@@ -90,7 +90,7 @@ const CarMarket = () => {
       <div className="carMarket-upper-body">
         <SearchBar value={string} onChange={handleChange} />
         <h3 className="car-market-title">You have: {userPoints} points</h3>
-        <h3 className="car-market-title">Theese are the cars you can afford</h3>
+        <h3 className="car-market-title">Theese are the cars available on the market: </h3>
         </div>
         <Form className="select-form">
           <Form.Group controlId="exampleForm.ControlSelect1">
@@ -142,7 +142,6 @@ const CarMarket = () => {
           string={string}
           data={tempCarItems}
           userPoints={userPoints}
-          showAforted={showAforted}
           sortValue={sortValue}
           reversed={reversed}
         />
